@@ -1,0 +1,24 @@
+.CreateTodoBottom{
+    background-color: #eca36c;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 50px;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    font-weight: 64px;
+
+    transform: rotate(0);
+    transition: .3s;
+    z-index: 1;
+}
+
+.CreateTodoBottom:hover{
+    transform: rotate(224deg);
+}
