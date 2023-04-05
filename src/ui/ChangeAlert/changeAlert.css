@@ -8,6 +8,7 @@ form {
     align-items: center;
     flex-direction: column;
     border-radius: 6px;
+    z-index: 3;
 }
 
 label{
@@ -24,6 +25,8 @@ label{
     justify-content: center;
     align-items: center;
     width: 100%;
+    z-index: 3;
+
 }
 
 .TodoForm-button{
@@ -36,6 +39,7 @@ label{
     height: 48px;
     border-radius: 2px;
     font-family: 'Montserrat';
+
 }
 
 .TodoForm-buttom--cancel{

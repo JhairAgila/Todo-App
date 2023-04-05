@@ -1,8 +1,9 @@
 import React from "react";
+import './emptySearchResult.css'
 
 function EmptySearchResult (props) {
     return(
-        <p>No hay Resultados de la busqueda {props.seachValue} </p>
+        <p className="emptyResult"> No hay Resultados de la busqueda:  {props.seachValue} </p>
         
     );
 }

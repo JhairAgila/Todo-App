@@ -7,18 +7,19 @@ function ChangeAlert({sincronize}) {
     const { show, toggleShow} = useStorageListener(sincronize);
 
   if (show) {
-    return (
+    return ( 
     <Modal>
       <form>
-        <label> Existen cambios</label>
-        <div className="TodoForm-buttonContainer">
-        
-          <button type="submit" className="TodoForm-buton TodoForm-buttom--add"
-          onClick={() => toggleShow}>
-            Recargar
-          </button>
-        </div>
-      </form>
+          <label> Existen cambios</label>,
+          <div className="TodoForm-buttonContainer">
+          
+            <button type = 'submit' className="TodoForm-buton TodoForm-buttom--add"
+            onClick={toggleShow}>
+              Recargar
+            </button>
+          
+          </div>
+       </form>
     </Modal>
     );
   } else {

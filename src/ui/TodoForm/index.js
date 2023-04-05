@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./TodoForm.css";
+import { TodoBackground } from "../../routes/TodoBackground";
 
 function TodoForm(props) {
   const navigate = useNavigate();
@@ -23,7 +24,8 @@ function TodoForm(props) {
     // addTodo(newTodoValue);
   };
 
-  return (
+  return [ 
+    <TodoBackground/>,
     <form onSubmit={onSubmit}>
       <label>{props.label}</label>
       <textarea
@@ -44,7 +46,7 @@ function TodoForm(props) {
         </button>
       </div>
     </form>
-  );
+  ];
 }
 
 export { TodoForm };

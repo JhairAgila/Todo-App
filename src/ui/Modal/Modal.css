@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   color: white;
+  z-index: 1  ;
 }
 /* .open-ModalBackground{
     visibility: visible;

@@ -1,6 +1,10 @@
 .TodoCounter {
     font-size: 25px;
     text-align: center;
+    font-family: "Latin Modern Roman";
+    font-style: italic;
+    font-size: 30px;
+    color: white;
 }
 .TodoCounter--loading{
     opacity: 50%;

@@ -1,27 +1,79 @@
+:root{
+  --clippy: circle(0% at 50% 50%);
 
-    .TodoItem {
-        background-color: #FAFAFA;
-        border-radius: 10px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 24px;
-        margin-right: 15px;
-        box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
-      }
-      
-      .TodoItem-p {
-        margin: 24px 0 24px 24px;
-        width: calc(100% - 80px);
-        font-size: 18px;
-        line-height: 24px;
-        font-weight: 400;
-      }
-      .TodoItem-p--complete {
-        text-decoration: line-through;
-      }
-      
+}
+.TodoItem {
+  background-color: rgba(232, 255, 131) ;
+  /* opacity: 4; */
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  margin-right: 15px;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+  /* padding: 5px; */
+  z-index: 1;
+  transition-duration: 0.25s;
+  /* transition-timing-function: ease-in; */
+}
+.TodoItem--complete{
+  background-color: rgb(238, 118, 118);
+  opacity: 0.5;
+  transition: 2s;
+}
 
+.TodoItem-p {
+  margin: 24px 0 24px 24px;
+  width: calc(100% - 80px);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
 
+.TodoItem-p--complete {
+  text-decoration: line-through;
+  /* background-color: rgb(116, 26, 26); */
+  /* transition: 2sx; */
+}
 
+.TodoItem::before{
+  content: '';
+  background-color: rgb(218, 231, 48);
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  clip-path: var(--clippy);
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+  transition: clip-path 2s;
+  z-index: -1;
+}
+.TodoItem:hover::before {
+  background-color: rgb(218, 231, 48);
+  border: 3px solid rgb(155, 208, 64);
+  clip-path: circle(70.7% at 50% 50%);
+  border-radius: 10px;
+}
+.TodoItem--complete::before{
+  content: '';
+  background-color: red;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  clip-path: var(--clippy);
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+  transition: clip-path 2s;
+}
+.TodoItem--complete:hover::before{
+  background-color: red;
+  border: 3px solid rgb(208, 64, 170);
+  clip-path: circle(70.7% at 50% 50%);
+  border-radius: 10px;
+}

@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import "../index.css";
 import { useTodos } from "../useTodos";
 import { TodoSearch } from "../../ui/TodoSearch";
@@ -17,10 +17,12 @@ import { TodoHeader } from "../../ui/TodoHeader";
 import { TodoCounter } from "../../ui/TodoCounter";
 import { EmptySearchResult } from "../../ui/EmptySearchResult";
 import { ChangeAlert } from "../../ui/ChangeAlert";
+import { TodoBackground } from "../TodoBackground";
 
 function HomePage() {
   const navigate = useNavigate();
   const {state, stateUpdaters} = useTodos();
+  const [searchParams, setSearchParams] = useSearchParams();
   
   const {
     error,
@@ -37,29 +39,29 @@ function HomePage() {
     setSeachValue,
     completeTodo,
     editTodo,
-    // addTodo, 
     deleteTodo,
-    // setOpenModal,
     sincronizedTodos,
-    getTodo,
   } = stateUpdaters
 
 
   return (
     <React.Fragment>
+      <TodoBackground />
       <TodoHeader loading={loading}>
         <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
       </TodoHeader>
 
       <main>
-        <aside id="mainIzquierdo">
+        <aside id="main--Izquierdo">
           <TodoParteIzquierda />
         </aside>
-        <aside id="mainDerecho">
+        <aside id="main--Derecho">
           <TodoSearch
             seachValue={seachValue}
             setSeachValue={setSeachValue}
             loading={loading}
+            searchParams = {searchParams}
+            setSearchParams = {setSearchParams}
           />
 
           <TodoList
@@ -78,7 +80,7 @@ function HomePage() {
               <TodoItem
                 key={todo.id}
                 text={todo.text}
-                completed={todo.completed}
+                completed = {todo.completed}
                 editTodo = {() => editTodo(todo.id, todo.text)}
                 onComplete={() => completeTodo(todo.id)}
                 onEdit={() => {
@@ -111,6 +113,7 @@ function HomePage() {
         ></ChangeAlert>
 
       </main>
+
     </React.Fragment>
   );
 }

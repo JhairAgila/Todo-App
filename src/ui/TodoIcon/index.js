@@ -7,10 +7,10 @@ import {faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 
 const iconTypes = {
     "check": color => (
-        <FontAwesomeIcon icon = {faCircleCheck} className="Icon-svg Icon-svg--check" fill= {color} />
+        <FontAwesomeIcon icon = {faCircleCheck} className="Icon-svg Icon-svg--check" color={color} />
     ), 
     "delete": color => ( 
-        <FontAwesomeIcon icon={faTrash} className="Icon-svg Icon-svg--delete" fill={color} />
+        <FontAwesomeIcon icon={faTrash} className="Icon-svg Icon-svg--delete" color={color} />
     ),
     "edit" : color => ( 
         <FontAwesomeIcon icon={faPenToSquare} className="Icon-svg Icon-svg--edit" fill={color}/>
@@ -18,7 +18,7 @@ const iconTypes = {
 };
 
 
-function TodoIcon({type, color='green', onClick}){
+function TodoIcon({type, color = 'black', onClick}){
     
     return (
         <span className={`Icon-container Icon-container--${type}`} 

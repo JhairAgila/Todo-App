@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import './Modal.css';
+// import '../../routes/index.css';
 function Modal({children}){
 
     // let modal = document.getElementById('ModalBackgroundd')
@@ -18,7 +19,6 @@ function Modal({children}){
 
     return ReactDOM.createPortal(
         <div className="ModalBackground">
-            {/* <img src={icon} alt="MND"/> */}
             {children}
         </div>,
         document.getElementById('modal')

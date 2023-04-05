@@ -30,15 +30,18 @@
 }
 
 .Icon-container:hover .Icon-svg--check{
-    fill: green;
+    /* fill: green; */
+    color: green;
 }
 
 .Icon-container:hover .Icon-svg--delete{
-    fill: red;
-    background-color: red;
+    /* fill: red; */
+    color: red
+    /* background-color: red; */
 }
 
 .Icon-container:hover .Icon-svg--edit{
-    fill: green;
-    background-color: red;
+    /* fill: green; */
+    color:green
+    /* background-color: red; */
 }

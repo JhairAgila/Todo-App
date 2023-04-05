@@ -14,11 +14,12 @@ function useLocalStorage(itemName, initialValue) {
     const onSuccess = (parsedItem) => distpatch({ type: actionType.success, payload: parsedItem,});
     const onSave = (newTodos) => distpatch({type: actionType.save, payload: newTodos,});
     const onSetItem = (item) => distpatch({ type: actionType.setItem, payload: item,});
-    const onSincronizeItem = () => {
+
+    const onSincronizeItem = () => 
       distpatch({
-        type: distpatch.sincronize,
+        type: actionType.sincronize,
       });
-    }
+    
 
     React.useEffect(() => {
       try {
@@ -97,8 +98,8 @@ function useLocalStorage(itemName, initialValue) {
     },
     [actionType.sincronize] : {
       ...state,
-      loading: true,
       sincronizedItem: false,
+      loading: true,
     },
     [actionType.setItem] : {
       ...state,

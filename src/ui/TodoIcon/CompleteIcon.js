@@ -4,8 +4,8 @@ import {TodoIcon} from './index';
 function CompleteIcon({completed, onCompleted}) {
     return(
         <TodoIcon
-            type='check'
-            color={completed ? 'red' : 'green'}
+            type="check"
+            color={completed ? 'green' : 'black'}
             onClick = {onCompleted}
         />
     );
