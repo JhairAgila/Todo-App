@@ -13,7 +13,7 @@ function useLocalStorage(itemName, initialValue) {
     const onError = (error) => distpatch({ type: actionType.error, payload: error, });
     const onSuccess = (parsedItem) => distpatch({ type: actionType.success, payload: parsedItem,});
     const onSave = (newTodos) => distpatch({type: actionType.save, payload: newTodos,});
-    const onSetItem = (item) => distpatch({ type: actionType.setItem, payload: item,});
+    // const onSetItem = (item) => distpatch({ type: actionType.setItem, payload: item,});
 
     const onSincronizeItem = () => 
       distpatch({
@@ -39,7 +39,7 @@ function useLocalStorage(itemName, initialValue) {
       } catch (error) {
         onError(error);
       }
-    }, [sincronizedItem]);
+    }, [sincronizedItem, initialValue, itemName]);
   
     const saveItem = (newTodos) => {
       try {

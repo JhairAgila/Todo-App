@@ -8,8 +8,6 @@ import { TodoList } from "../../ui/TodoList";
 import { CreateTodoButtom } from "../../ui/CreateTodoBottom";
 import { TodoItem } from "../../ui/TodoItem";
 import { TodoParteIzquierda } from "../../ui/TodoParteIzquierda";
-import { Modal } from "../../ui/Modal/index";
-import { TodoForm } from "../../ui/TodoForm";
 import { TodoError } from "../../ui/TodoError";
 import { TodoLoading } from "../../ui/TodoLoading";
 import { EmptyTodos } from "../../ui/EmptyTodos";
@@ -92,14 +90,7 @@ function HomePage() {
               />
             )}
           ></TodoList>
-          {/* {!!openModal && (
-            <Modal>
-              <TodoForm
-                addTodo={addTodo}
-                setOpenModal={setOpenModal}
-              ></TodoForm>
-            </Modal>
-          )} */}
+
         </aside>
 
         <CreateTodoButtom

@@ -15,14 +15,15 @@ function TodoSearch( {seachValue, setSeachValue, loading, searchParams, setSearc
     useEffect( () => {
         const search = searchParams.get("search") ?? "";
         setSeachValue(search);
-    }, [searchParams])
+    }, [searchParams, setSeachValue])
 
-    return[ 
+    return(
         <input className="TodoSearch"
          placeholder='Tarea...'
          value={seachValue}
          onChange={onSearchValueChange}
-         disabled = {loading}></input>,
-    ];
+         disabled = {loading} />
+
+    );
 }
 export {TodoSearch};
