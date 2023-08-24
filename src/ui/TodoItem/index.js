@@ -1,5 +1,4 @@
 import React from "react";
-import { EditTodoPage } from "../../routes/edit/editTodoPage";
 import {CompleteIcon} from '../TodoIcon/CompleteIcon';
 import { DeleteIcon } from "../TodoIcon/DeleteIcon";
 import { EditIcon } from "../TodoIcon/EditIcon";
